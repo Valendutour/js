@@ -1,8 +1,9 @@
+/*
 let servicio= true
 
-const pregunta = prompt("¿Queres que te vendamos un producto? Si o No")
+const pregunta = prompt("¿Queres que te vendamos un producto? Si o No").toLowerCase()
 while(servicio== true){
-    if(pregunta == "Si"){
+    if(pregunta == "si"){
 
     const producto = prompt("Por favor ingresa el nombre del producto que quieras que vendamos")
     console.log(producto)
@@ -23,3 +24,4 @@ while(servicio== true){
 
     servicio=confirm("Queres agregar otro producto?")
 }
+*/
