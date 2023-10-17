@@ -1,0 +1,245 @@
+/* hoja de inicio */
+.galeria{
+    display: flex;
+    height: 450px;
+    img{
+        height: 420px;
+        width: 0px;
+        flex-grow: 1;
+        object-fit: cover;
+        opacity: 0.7;
+        transition: .5s ease;
+        align-self: $centro;
+        &:hover{
+            cursor: crosshair;
+            height: 680px;
+            width: 180px;
+            opacity: 1;
+            filter: contrast(130%);
+        }
+    }
+}
+.alturas{
+    margin-bottom: 0px;
+}
+.card{
+    background:$colorb;
+    img{
+        object-fit: contain;
+    }
+    .cuerpo{
+        height: 300px;
+        button{
+            padding: 0; 
+            margin: 0 ;
+            border: none; 
+            background: none; 
+            --primary-color: #111; 
+            --hovered-color: #aeaeae; 
+            position: relative; 
+            display: flex ;
+            font-weight: 600; 
+            font-size: 20px;
+            gap: 0.5rem;
+            align-items: $centro;
+            p{
+                margin: 0; 
+                position: relative; 
+                font-size: 20px;
+                color: var(--primary-color); 
+                &::before{
+                    position: absolute;
+                    content: "Comprar";
+                    width: 0%;
+                    inset: 0 ;
+                    color: var(--hovered-color); 
+                    overflow: hidden; 
+                    transition: 0.3s ease-out;
+                }
+            } 
+        &::after{ 
+            position: absolute;
+            content: "";
+            width: 0;
+            left: 0;
+            bottom: -7px; 
+            background: var(--hovered-color);
+            height: 2px;
+            transition: 0.3s ease-out
+        }
+        &:hover{ 
+            &::after{
+                width: 100%;
+            }
+        }
+        p{
+            &::before{ 
+                width: 100%;
+            }
+            svg {
+                transform: translateX(4px); 
+                color: var(--hovered-color);
+            }
+            }
+        svg{
+            color: var(--primary-color);
+            transition: 0.2s;
+            position: relative; 
+            width: 15px;
+            transition-delay: 0.2s;
+        }
+        }
+    }
+}
+.video{
+    margin-top: 200px;
+}
+
+
+/* hoja de peluqueria */
+.articulos{
+    display: flex;
+    justify-content: $centro;
+    @extend .grid-2;
+    img{
+        margin-bottom: 80px;
+        width: $wh-300;
+        height: $wh-300;
+        object-fit: cover;
+    }
+    div{
+        margin-top: 50px;
+        h3{
+            font-size: 30px;
+            text-align: $centro;
+            margin: 0px 20px 0px 20px;
+        }
+        p{
+        width: $w-650;
+        margin: 20px;
+        }
+    }
+}
+.reverse{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* hoja de cosmiatria y masajes */
+.articulos2{
+    display: flex;
+    justify-content: $centro;
+    @extend .grid-2;
+    img{
+        margin-bottom: 80px;
+        width: $wh-300;
+        height: $wh-300;
+        object-fit: cover;
+        }
+    div{
+        margin-top: 50px;
+        h3{
+            font-size: 30px;
+            text-align: $centro;
+            margin: 0px 20px 0px 20px;
+        }
+        p{
+        width: $w-650;
+        margin: 20px;
+        }
+    }
+}
+.reverse2{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* hoja de manicura y pedicura */
+.maniypedi{
+    display: flex;
+    justify-content: $s-evenly;
+    @extend .grid-2;
+    div{
+        img{
+        margin-bottom: 80px;
+        width: $wh-300;
+        height: $wh-300;
+        object-fit: cover;
+        }
+        p{
+        width:$w-650;
+        }
+    }
+}
+
+
+/* hoja de contacto */
+.contacto{
+    display: flex;
+    justify-content: $s-evenly;
+    @extend .grid-3;
+}
+.contacto_div{
+    p{
+    width: $w-500;
+    }
+}
+
+.ubicacion{
+    justify-content: $s-evenly;
+}
+#h3formulario{
+    text-align: $centro;
+}
+.row{
+    justify-content: $centro;
+    form{
+        div{
+            label{
+            color: black;
+            }
+        }
+    }
+}
+
+/* hoja error 404 */
+.centrado{
+    display: flex;
+    flex-direction: column;
+    justify-content: $centro;
+    align-items: $centro;
+    margin-top: 130px;
+    .error{
+        justify-content: $centro;
+        align-items: $centro;
+        font-size: 200px;
+    }
+    div{
+        .size404{
+            font-size: $fontm;
+        }
+    }
+    .enlinea{
+        flex-direction: row;
+        .e404{
+            margin: 12px;
+            height: 50px;
+            width: 120px;
+            border-radius: 10px;
+            background: #333;
+            justify-content: $centro;
+            align-items: 4centro;
+            box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+            font-family: 'Damion', cursive;
+            border: none;
+            font-size: 16px;
+            color: rgb(161, 161, 161);
+            transition: 500ms;
+            &:hover{
+                box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+                color: #d6d6d6;
+                transition: 500ms;
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+/* navbar */
+#color{
+    .marca{
+        font-size: $fontxxl;
+    }
+    div{
+        a{
+            color: white;
+            }
+        ul{
+            li{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                a{
+                    color: $textcolor;
+                    margin: 15px;
+                    &:hover{
+                        color :  rgb( 99 ,  93 ,  93 );
+                    }
+                }
+            }
+        }
+    }   
+}
+
+/* footer */
+#final{
+    padding-top: 25px;
+    min-height: 50px;
+    display: flex;
+    width: 100%;
+    background: $color1;
+    justify-content: $centro;
+    text-align: $centro;
+    h2{
+        margin-bottom: 20px;
+        font-size: $fontxl;
+    }
+    h4{
+        margin-bottom: 14px;
+    }
+    #iconos{
+        display: flex;
+        justify-content: $s-evenly;
+        align-items: $centro;
+        img{
+            width: 50px;
+            height: 60px;
+            margin-bottom: 15px;
+            &:hover{
+                transform: rotatey(360deg);
+                cursor: pointer;
+                transition: all 2s;
+            }   
+        }
+    }
+}

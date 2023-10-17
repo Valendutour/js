@@ -1,0 +1,677 @@
+@charset "UTF-8";
+/*alineacion*/
+/*colors*/
+/*tipografia*/
+/*grosor de letras*/
+/*tamaño de letras*/
+/*width y height*/
+/*extendes*/
+.grid-gral, .grid-3, .contacto, .grid-2, .maniypedi, .articulos2, .articulos {
+  display: grid;
+  grid-template-columns: 2 auto;
+  grid-template-rows: auto;
+}
+
+.grid-2, .maniypedi, .articulos2, .articulos {
+  grid-template-areas: "gri1" "gri2";
+}
+
+.grid-3, .contacto {
+  grid-template-areas: "1" "2";
+}
+
+@keyframes button {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+/*mixing*/
+img {
+  width: 300px;
+  height: 300px;
+}
+
+* {
+  font-family: "Merriweather", serif;
+  color: white;
+}
+
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+main {
+  background-image: url(../fotos/fondonegro.jpg);
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 30px;
+  color: white;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  margin-left: 35px;
+}
+
+h4, h5 {
+  font-size: small;
+  text-align: center;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 19px;
+  text-align: justify;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+  font-size: medium;
+  color: white;
+}
+
+/* navbar */
+#color .marca {
+  font-size: xx-large;
+}
+#color div a {
+  color: white;
+}
+#color div ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#color div ul li a {
+  color: white;
+  margin: 15px;
+}
+#color div ul li a:hover {
+  color: rgb(99, 93, 93);
+}
+
+/* footer */
+#final {
+  padding-top: 25px;
+  min-height: 50px;
+  display: flex;
+  width: 100%;
+  background: linear-gradient(to top, rgb(53, 53, 53), black);
+  justify-content: center;
+  text-align: center;
+}
+#final h2 {
+  margin-bottom: 20px;
+  font-size: x-large;
+}
+#final h4 {
+  margin-bottom: 14px;
+}
+#final #iconos {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#final #iconos img {
+  width: 50px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+#final #iconos img:hover {
+  transform: rotatey(360deg);
+  cursor: pointer;
+  transition: all 2s;
+}
+
+/* hoja de inicio */
+.galeria {
+  display: flex;
+  height: 450px;
+}
+.galeria img {
+  height: 420px;
+  width: 0px;
+  flex-grow: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.7;
+  transition: 0.5s ease;
+  align-self: center;
+}
+.galeria img:hover {
+  cursor: crosshair;
+  height: 680px;
+  width: 180px;
+  opacity: 1;
+  filter: contrast(130%);
+}
+
+.alturas {
+  margin-bottom: 0px;
+}
+
+.card {
+  background: black;
+}
+.card img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.card .cuerpo {
+  height: 300px;
+}
+.card .cuerpo button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  --primary-color: #111;
+  --hovered-color: #aeaeae;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+}
+.card .cuerpo button p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+.card .cuerpo button p::before {
+  position: absolute;
+  content: "Comprar";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+.card .cuerpo button::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+.card .cuerpo button:hover::after {
+  width: 100%;
+}
+.card .cuerpo button p::before {
+  width: 100%;
+}
+.card .cuerpo button p svg {
+  transform: translateX(4px);
+  color: var(--hovered-color);
+}
+.card .cuerpo button svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
+
+.video {
+  margin-top: 200px;
+}
+
+/* hoja de peluqueria */
+.articulos {
+  display: flex;
+  justify-content: center;
+}
+.articulos img {
+  margin-bottom: 80px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.articulos div {
+  margin-top: 50px;
+}
+.articulos div h3 {
+  font-size: 30px;
+  text-align: center;
+  margin: 0px 20px 0px 20px;
+}
+.articulos div p {
+  width: 600px;
+  margin: 20px;
+}
+
+.reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* hoja de cosmiatria y masajes */
+.articulos2 {
+  display: flex;
+  justify-content: center;
+}
+.articulos2 img {
+  margin-bottom: 80px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.articulos2 div {
+  margin-top: 50px;
+}
+.articulos2 div h3 {
+  font-size: 30px;
+  text-align: center;
+  margin: 0px 20px 0px 20px;
+}
+.articulos2 div p {
+  width: 600px;
+  margin: 20px;
+}
+
+.reverse2 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* hoja de manicura y pedicura */
+.maniypedi {
+  display: flex;
+  justify-content: space-evenly;
+}
+.maniypedi div img {
+  margin-bottom: 80px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.maniypedi div p {
+  width: 600px;
+}
+
+/* hoja de contacto */
+.contacto {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contacto_div p {
+  width: 500px;
+}
+
+.altura {
+  height: 100px;
+}
+
+.ubicacion {
+  justify-content: space-evenly;
+}
+
+#h3formulario {
+  text-align: center;
+}
+
+.row {
+  justify-content: center;
+}
+.row form div label {
+  color: black;
+}
+
+/* hoja error 404 */
+.centrado {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 130px;
+}
+.centrado .error {
+  justify-content: center;
+  align-items: center;
+  font-size: 200px;
+}
+.centrado div .size404 {
+  font-size: medium;
+}
+.centrado .enlinea {
+  flex-direction: row;
+}
+.centrado .enlinea .e404 {
+  margin: 12px;
+  height: 50px;
+  width: 120px;
+  border-radius: 10px;
+  background: #333;
+  justify-content: center;
+  align-items: 4centro;
+  box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+  font-family: "Damion", cursive;
+  border: none;
+  font-size: 16px;
+  color: rgb(161, 161, 161);
+  transition: 500ms;
+}
+.centrado .enlinea .e404:hover {
+  box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+  color: #d6d6d6;
+  transition: 500ms;
+}
+
+@media (max-width: 1285px) {
+  .card .cuerpo h3 {
+    font-size: 23px;
+  }
+  .card .cuerpo p {
+    font-size: medium;
+  }
+  .video {
+    margin-top: 275px;
+  }
+}
+@media (max-width: 992px) {
+  a {
+    font-size: small;
+  }
+  h2 {
+    font-size: large;
+  }
+  #color div ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    margin-top: 10px;
+  }
+  #color div ul li a {
+    margin: 0px;
+  }
+  .card .cuerpo {
+    height: 400px;
+  }
+  .video {
+    margin-top: 150px;
+  }
+  .articulos {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: auto;
+    grid-template-areas: "gri1" "gri2";
+    justify-items: center;
+  }
+  .articulos img {
+    margin-bottom: 10px;
+  }
+  .articulos div {
+    margin-top: 10px;
+    margin-bottom: 70px;
+  }
+  .articulos div h3 {
+    font-size: 33px;
+  }
+  .articulos div p {
+    font-size: large;
+  }
+  .articulos2 {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: auto;
+    grid-template-areas: "gri1" "gri2";
+    justify-items: center;
+  }
+  .articulos2 img {
+    margin-bottom: 10px;
+  }
+  .articulos2 div {
+    margin-top: 10px;
+    margin-bottom: 70px;
+  }
+  .articulos2 div h3 {
+    font-size: 33px;
+  }
+  .articulos2 div p {
+    font-size: large;
+  }
+  .maniypedi {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: auto;
+    grid-template-areas: "gri1" "gri2";
+  }
+  .maniypedi div h3 {
+    font-size: 33px;
+    margin-top: 0px;
+  }
+  .maniypedi div p {
+    width: 600px;
+    font-size: large;
+  }
+  .contacto {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: auto;
+    grid-template-areas: "1" "2";
+    justify-items: center;
+  }
+  .contacto div h3 {
+    margin-left: 0px;
+    text-align: center;
+    font-size: 33px;
+    margin-top: 0px;
+    padding-top: 10px;
+  }
+  .contacto div p {
+    width: 600px;
+  }
+}
+@media (max-width: 768px) {
+  a {
+    font-size: x-small;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: medium;
+  }
+  h3 {
+    margin: 0%;
+    text-align: center;
+  }
+  #color .marca {
+    font-size: x-large;
+  }
+  .card .cuerpo {
+    height: 370px;
+  }
+  .card .cuerpo h3 {
+    font-size: 25px;
+  }
+  .card .cuerpo p {
+    font-size: large;
+  }
+  .video {
+    margin-top: 30px;
+  }
+  .articulos div {
+    margin-bottom: 50px;
+  }
+  .articulos div h3 {
+    font-size: 28px;
+  }
+  .articulos div p {
+    width: 500px;
+    font-size: large;
+  }
+  .articulos2 div {
+    margin-bottom: 50px;
+  }
+  .articulos2 div h3 {
+    font-size: 28px;
+  }
+  .articulos2 div p {
+    width: 500px;
+    font-size: large;
+  }
+  .maniypedi div h3 {
+    font-size: 28px;
+  }
+  .maniypedi div p {
+    width: 500px;
+  }
+  .contacto div h3 {
+    font-size: 28px;
+  }
+  .contacto div p {
+    width: 500px;
+    font-size: large;
+  }
+  .contacto .ubicacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 490px;
+  }
+}
+@media (max-width: 584px) {
+  h1 {
+    font-size: xx-large;
+  }
+  h3 {
+    font-size: medium;
+  }
+  #color .marca {
+    font-size: large;
+  }
+  .galeria {
+    height: 420px;
+  }
+  .galeria img {
+    width: 0px;
+    margin: 0px;
+    align-self: auto;
+  }
+  .galeria img:hover {
+    height: 420px;
+    width: 190px;
+  }
+  .card .cuerpo {
+    height: 360px;
+  }
+  .card .cuerpo h3 {
+    font-size: 22px;
+  }
+  .video {
+    margin-top: 10px;
+  }
+  .articulos img {
+    width: 250px;
+    height: 250px;
+  }
+  .articulos div h3 {
+    font-size: 25px;
+  }
+  .articulos div p {
+    width: 280px;
+  }
+  .articulos2 img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 70px;
+  }
+  .articulos2 div h3 {
+    font-size: 25px;
+  }
+  .articulos2 div p {
+    width: 280px;
+  }
+  .maniypedi div p {
+    width: 335px;
+  }
+  .contacto div h3 {
+    font-size: 25px;
+  }
+  .contacto div p {
+    width: 340px;
+  }
+  .contacto .ubicacion {
+    width: 335px;
+  }
+}
+@media (max-width: 365px) {
+  .card .cuerpo {
+    height: 350px;
+  }
+  .card .cuerpo h3 {
+    font-size: 20px;
+  }
+  .card .cuerpo p {
+    font-size: small;
+  }
+  .video {
+    margin-top: 20px;
+  }
+  .articulos img {
+    margin-bottom: 0px;
+  }
+  .articulos div {
+    margin-bottom: 75px;
+  }
+  .articulos2 img {
+    margin-bottom: 0px;
+  }
+  .articulos2 div {
+    margin-bottom: 75px;
+  }
+  .maniypedi div p {
+    width: 295px;
+  }
+  .contacto div p {
+    width: 295px;
+  }
+  .ubicacion {
+    width: 290px;
+  }
+  .centrado .error {
+    font-size: 160px;
+  }
+}/*# sourceMappingURL=style.css.map */

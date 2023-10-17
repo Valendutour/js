@@ -1,0 +1,35 @@
+/*extendes*/
+.grid-gral{
+    display: grid;
+    grid-template-columns: 2 auto;
+    grid-template-rows: auto;
+}
+.grid-2{
+    @extend .grid-gral;
+    grid-template-areas: "gri1" "gri2";
+}
+.grid-3{
+    @extend .grid-gral;
+    grid-template-areas: "1" "2";
+}
+
+@keyframes button{
+    0%{
+    background-position: 0 0;
+    }
+    50%{
+    background-position: 400% 0;
+    }
+    100%{
+    background-position: 0 0;
+    }
+}
+
+/*mixing*/
+@mixin cajas($w, $h){
+    width: $w;
+    height: $h;
+}
+img{
+    @include cajas($wh-300, $wh-300);
+}
