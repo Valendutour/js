@@ -1,52 +1,50 @@
+const Usuario = function(n, mombreail, celu, comment) {
+    this.nombre = nombre;
+    this.mail = mail;
+    this.celu = celu;
+    this.comment = comment;
+}
+const arrayUsuarios = [];
+
 const nombre = document.getElementById("inputNombre");
 const mail = document.getElementById("inputEmail");
 const celu = document.getElementById("inputTel");
 const comment = document.getElementById("floatingTextarea2");
 const send = document.getElementById("boton");
-const clear = document.getElementById("clear");
 
-function guardar(){
+function guardar(event) {
+    event.preventDefault();
     if (nombre.value.trim() !== "" && mail.value.includes("@") && !isNaN(celu.value) && comment.value.trim() !== "") {
 
-    const jsonNombre = JSON.stringify(nombre.value)
-    const jsonMail = JSON.stringify(mail.value)
-    const jsonCelu = JSON.stringify(celu.value)
-    const jsonComment = JSON.stringify(comment.value)
+        let usuario = new Usuario(nombre.value, mail.value, celu.value, comment.value);
 
-    localStorage.setItem('name',jsonNombre)
-    localStorage.setItem("mail",jsonMail)
-    localStorage.setItem('celu',jsonCelu)
-    localStorage.setItem('comment',jsonComment)
+        arrayUsuarios.push(usuario);
+        localStorage.setItem("Usuarios",arrayUsuarios);
 
-    console.log(typeof nombre)
-    console.log(typeof jsonNombre)
 
-    }else {
-        alert("Por favor, complete todos los campos correctamente.");
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "success",
+            title: "Formulario enviado"
+          });
+    } else {
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Complete todos los campos correctamente",
+            showConfirmButton: false,
+            timer: 2200
+        });
     }
 }
-
-send.addEventListener("click",guardar)
-
-
-/*
-if("name"==="" || "mail"==="" || isNaN(celu)){
- que aparezca cartel que diga rellena todos los campos
-<div id="ventanaModal" class="modal">
- <div class="modal-contenido">
-     <span class="cerrar" id="cerrarModal">&times;</span>
-     <h2>Producto Agregado</h2>
-     <p>Se ha agregado un nuevo producto a la lista.</p>
- </div>
-</div>
-}
-
-<!--start link a pag 404 error href="./404.html" (estaba puesto en el boton enviar)end-->
-
-send.addEventListener("click",enviar);
-
-function enviar(x){
-    x.preventDefault();
-    console.log("formulario enviado")
-}
-*/
+send.addEventListener("click", guardar);
