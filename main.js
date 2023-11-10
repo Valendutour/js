@@ -1,4 +1,4 @@
-const Usuario = function(n, mombreail, celu, comment) {
+const Usuario = function(nombre, mail, celu, comment) {
     this.nombre = nombre;
     this.mail = mail;
     this.celu = celu;
@@ -48,3 +48,4 @@ function guardar(event) {
     }
 }
 send.addEventListener("click", guardar);
+
